@@ -1,8 +1,5 @@
-package nurseangel.EcologyGeneration.proxy;
+package mods.nurseangel.ecologygeneration.proxy;
 
-public class CommonProxy
-{
-    public void registerRenderers()
-    {
-    }
+public class CommonProxy {
+
 }

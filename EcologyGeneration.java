@@ -1,15 +1,15 @@
-package nurseangel.EcologyGeneration;
+package mods.nurseangel.ecologygeneration;
 
-import ic2.api.Items;
+import ic2.api.item.Items;
 
 import java.util.logging.Level;
 
+import mods.nurseangel.ecologygeneration.proxy.CommonProxy;
 import net.minecraft.block.Block;
 import net.minecraft.block.EnumMobType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
-import nurseangel.EcologyGeneration.proxy.CommonProxy;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -48,7 +48,6 @@ public class EcologyGeneration {
 			cfg.save();
 		}
 
-		proxy.registerRenderers();
 	}
 
 	// load()なもの

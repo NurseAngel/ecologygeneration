@@ -1,4 +1,4 @@
-package nurseangel.EcologyGeneration;
+package mods.nurseangel.ecologygeneration;
 
 import ic2.api.Direction;
 import ic2.api.energy.tile.IEnergySource;

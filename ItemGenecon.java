@@ -1,8 +1,7 @@
-package nurseangel.EcologyGeneration;
+package mods.nurseangel.ecologygeneration;
 
-import ic2.api.ElectricItem;
-import ic2.api.IElectricItem;
-import net.minecraft.client.Minecraft;
+import ic2.api.item.ElectricItem;
+import ic2.api.item.IElectricItem;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -25,9 +24,6 @@ public class ItemGenecon extends Item implements IElectricItem {
 
 		setMaxStackSize(1);
 		setMaxDamage(0);
-
-		setIconIndex(0);
-		setTextureFile(Reference.TEXTURE_FILE);
 		setCreativeTab(CreativeTabs.tabTools);
 	}
 
@@ -38,7 +34,7 @@ public class ItemGenecon extends Item implements IElectricItem {
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer par3EntityPlayer) {
 		try {
 			ElectricItem.charge(itemStack, 1, 1, false, false);
-			FMLClientHandler.instance().getClient().thePlayer.swingItem(); //腕を振る
+			FMLClientHandler.instance().getClient().thePlayer.swingItem(); // 腕を振る
 		} catch (Exception e) {
 		}
 		super.onItemRightClick(itemStack, world, par3EntityPlayer);
@@ -46,12 +42,11 @@ public class ItemGenecon extends Item implements IElectricItem {
 		return itemStack;
 	}
 
-
 	/**
 	 * 電気を供給可能か
 	 */
 	@Override
-	public boolean canProvideEnergy() {
+	public boolean canProvideEnergy(ItemStack itemStack) {
 		return true;
 	}
 
@@ -59,7 +54,7 @@ public class ItemGenecon extends Item implements IElectricItem {
 	 * 満チャージしたアイテムID 特に変えたいときに別の値を返す?
 	 */
 	@Override
-	public int getChargedItemId() {
+	public int getChargedItemId(ItemStack itemStack) {
 		return this.itemID;
 	}
 
@@ -67,7 +62,7 @@ public class ItemGenecon extends Item implements IElectricItem {
 	 * 空のときのアイテムID
 	 */
 	@Override
-	public int getEmptyItemId() {
+	public int getEmptyItemId(ItemStack itemStack) {
 		return this.itemID;
 	}
 
@@ -75,7 +70,7 @@ public class ItemGenecon extends Item implements IElectricItem {
 	 * 最大充電容量
 	 */
 	@Override
-	public int getMaxCharge() {
+	public int getMaxCharge(ItemStack itemStack) {
 		return 10000;
 	}
 
@@ -83,7 +78,7 @@ public class ItemGenecon extends Item implements IElectricItem {
 	 * アイテムランク バッテリーが1、エナジークリスタルが2、ラポトロンが3
 	 */
 	@Override
-	public int getTier() {
+	public int getTier(ItemStack itemStack) {
 		return 1;
 	}
 
@@ -91,7 +86,7 @@ public class ItemGenecon extends Item implements IElectricItem {
 	 * 最大電圧
 	 */
 	@Override
-	public int getTransferLimit() {
+	public int getTransferLimit(ItemStack itemStack) {
 		return 32;
 	}
 
@@ -107,4 +102,5 @@ public class ItemGenecon extends Item implements IElectricItem {
 			}
 		}
 	}
+
 }

@@ -1,9 +1,9 @@
-package nurseangel.EcologyGeneration;
+package mods.nurseangel.ecologygeneration;
 
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-public class ItemGenerationFloor extends ItemBlock{
+public class ItemGenerationFloor extends ItemBlock {
 	/**
 	 * コンストラクタ
 	 *
@@ -26,19 +26,15 @@ public class ItemGenerationFloor extends ItemBlock{
 	}
 
 	/**
-	 * 内部的ブロックの名前を返す<br />
-	 * メタデータごとに名前を設定する場合必須<br />
+	 * 内部的ブロックの名前を返す
+	 *
+	 * @param ItenStack
+	 * @return String
 	 */
 	@Override
-	public String getItemNameIS(ItemStack itemstack) {
+	public String getUnlocalizedName(ItemStack itemstack) {
 		int i = itemstack.getItemDamage();
-		return (new StringBuilder()).append(getItemName()).append(i).toString();
-	}
-
-	@Override
-	public String getLocalItemName(ItemStack itemstack) {
-		int i = itemstack.getItemDamage();
-		return (new StringBuilder()).append(getItemName()).append(i).toString();
+		return (new StringBuilder()).append(getUnlocalizedName()).append(i).toString();
 	}
 
 }
